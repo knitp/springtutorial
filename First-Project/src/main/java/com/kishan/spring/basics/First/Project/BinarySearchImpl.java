@@ -1,6 +1,7 @@
 package com.kishan.spring.basics.First.Project;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
 
 @Component
@@ -9,7 +10,8 @@ public class BinarySearchImpl {
 	//loosely coupled\
 	//Autowiring by name (exp : bubbleSortAlgorithm earlier it was sortAlgorithm)
 	@Autowired
-	 private SortAlgorithm bubbleSortAlgorithm;
+	@Qualifier("bubble")
+	 private SortAlgorithm sortAlgorithm;
 	//Note:@primary has more preference than name.
 	 
 	/*public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
@@ -31,8 +33,8 @@ public class BinarySearchImpl {
 		int[] sortednumbers = bubblesort.sort(numbers);*/
 		
 		//looselycoupled
-		int[] sortednumbers = bubbleSortAlgorithm.sort(numbers);
-		System.out.println(bubbleSortAlgorithm);
+		int[] sortednumbers = sortAlgorithm.sort(numbers);
+		System.out.println(sortAlgorithm);
 		//search
 		return 3;
 	}
