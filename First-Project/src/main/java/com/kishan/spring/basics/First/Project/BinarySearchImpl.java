@@ -9,11 +9,18 @@ public class BinarySearchImpl {
 	//loosely coupled
 	@Autowired
 	 private SortAlgorithm sortAlgorithm;
+	
 	 
-	public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
+	/*public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
 		super();
 		this.sortAlgorithm = sortAlgorithm;
-	}
+	}*/
+     
+	//if we also not make setter injection then no impact
+	/*public void setSortAlgorithm(SortAlgorithm sortAlgorithm) {
+		this.sortAlgorithm = sortAlgorithm;
+	}*/
+
 
 	public int binarySearch(int[] numbers, int numberToSearchFor) {
         
@@ -28,4 +35,6 @@ public class BinarySearchImpl {
 		//search
 		return 3;
 	}
+
+	
 }
