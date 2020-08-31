@@ -6,10 +6,11 @@ import org.springframework.stereotype.Component;
 @Component
 public class BinarySearchImpl {
      
-	//loosely coupled
+	//loosely coupled\
+	//Autowiring by name (exp : bubbleSortAlgorithm earlier it was sortAlgorithm)
 	@Autowired
-	 private SortAlgorithm sortAlgorithm;
-	
+	 private SortAlgorithm bubbleSortAlgorithm;
+	//Note:@primary has more preference than name.
 	 
 	/*public BinarySearchImpl(SortAlgorithm sortAlgorithm) {
 		super();
@@ -30,8 +31,8 @@ public class BinarySearchImpl {
 		int[] sortednumbers = bubblesort.sort(numbers);*/
 		
 		//looselycoupled
-		int[] sortednumbers = sortAlgorithm.sort(numbers);
-		System.out.println(sortAlgorithm);
+		int[] sortednumbers = bubbleSortAlgorithm.sort(numbers);
+		System.out.println(bubbleSortAlgorithm);
 		//search
 		return 3;
 	}
